@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD NODEJS / EXPRESS / MOGODB</title>
+</head>
+<body>
+
+<h2>Edit Car Register</h2>
+  <% data.forEach(function(details) { %>
+    <form action="/edit/<%= details._id %>" method="POST">
+      <input type="text" value="<%= details.carname %>" name="CarName">
+      <input type="text" value="<%= details.carbrand %>" name="CarBrand">
+      <input type="text" value="<%= details.carmodel %>" name="CarModel">
+      <input type="text" value="<%= details.caryear %>" name="CarYear">
+      <input type="text" value="<%= details.carcolor %>" name="CarColor">
+      <input type="text" value="<%= details.cardocument %>" name="CarDocument">
+      <br />
+      <button><a href="/show">Return</a></button>
+      <button type="submit">Submit</button>
+    </form>
+  <% }) %>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD NODEJS / EXPRESS / MOGODB</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<h2>Car Showroom</h2>
+  <table border="1">
+    <thead>
+        <tr>
+            <td>Car Name</td>
+            <td>Car Brand</td>
+            <td>Car Model</td>
+            <td>Car Year</td>
+            <td>Car Color</td>
+            <td>Car Document</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+    <% data.forEach(function(details) { %>
+        <tr>
+            <td><%= details.carname %></td>
+            <td><%= details.carbrand %></td>
+            <td><%= details.carmodel %></td>
+            <td><%= details.caryear %></td>
+            <td><%= details.carcolor %></td>
+            <td><%= details.cardocument %></td>
+            <td><a href="/edit/<%= details._id %>">Edit</a> - <a href="/delete/<%= details._id %>">Delete</a></td>
+        </tr>
+        <% }) %>
+    </tbody>
+  </table>
+  <button><a href="/">New Car Register</a></button>
+  <script src="js/jquery.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
